@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,22 @@
 		04A7B32C25DFEC5100502AC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A7B32A25DFEC5100502AC9 /* Main.storyboard */; };
 		04A7B32E25DFEC5600502AC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A7B32D25DFEC5600502AC9 /* Assets.xcassets */; };
 		04A7B33125DFEC5600502AC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A7B32F25DFEC5600502AC9 /* LaunchScreen.storyboard */; };
+		04A7B33E25DFECB200502AC9 /* LoginCredientials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7B33D25DFECB200502AC9 /* LoginCredientials.swift */; };
+		04A7B34225DFED0A00502AC9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7B34125DFED0A00502AC9 /* LoginViewController.swift */; };
+		04A7B34625DFED5800502AC9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7B34525DFED5800502AC9 /* LoginViewModel.swift */; };
+		04DC9A8B25E0E62F00D07D90 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9A8925E0E62F00D07D90 /* PostTableViewCell.swift */; };
+		04DC9A8C25E0E62F00D07D90 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DC9A8A25E0E62F00D07D90 /* PostTableViewCell.xib */; };
+		04DC9A9025E0E7C600D07D90 /* PostFavourite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9A8F25E0E7C600D07D90 /* PostFavourite.swift */; };
+		04DC9A9325E0E7F400D07D90 /* PostFavouriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9A9225E0E7F400D07D90 /* PostFavouriteModel.swift */; };
+		04DC9A9625E0EB0A00D07D90 /* PostFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9A9525E0EB0A00D07D90 /* PostFavouriteViewController.swift */; };
+		04DC9A9A25E100DE00D07D90 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04DC9A9925E100DE00D07D90 /* Alamofire */; };
+		04DC9A9F25E10B7A00D07D90 /* Post.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9A9D25E10B7A00D07D90 /* Post.xcdatamodeld */; };
+		04DC9AA725E147C800D07D90 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9AA625E147C800D07D90 /* CoreDataStorage.swift */; };
+		04DC9AAC25E1484C00D07D90 /* CodingUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9AAB25E1484C00D07D90 /* CodingUserInfoKey.swift */; };
+		04DC9AB625E159E200D07D90 /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9AB525E159E200D07D90 /* ValidationViewModel.swift */; };
+		04DC9ABF25E15A9B00D07D90 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC9ABE25E15A9B00D07D90 /* LoginModel.swift */; };
+		04DC9AC325E15CB100D07D90 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04DC9AC225E15CB100D07D90 /* RxSwift */; };
+		04DC9AC525E15CB100D07D90 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 04DC9AC425E15CB100D07D90 /* RxCocoa */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +40,19 @@
 		04A7B32D25DFEC5600502AC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04A7B33025DFEC5600502AC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04A7B33225DFEC5600502AC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A7B33D25DFECB200502AC9 /* LoginCredientials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredientials.swift; sourceTree = "<group>"; };
+		04A7B34125DFED0A00502AC9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		04A7B34525DFED5800502AC9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		04DC9A8925E0E62F00D07D90 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		04DC9A8A25E0E62F00D07D90 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		04DC9A8F25E0E7C600D07D90 /* PostFavourite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFavourite.swift; sourceTree = "<group>"; };
+		04DC9A9225E0E7F400D07D90 /* PostFavouriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFavouriteModel.swift; sourceTree = "<group>"; };
+		04DC9A9525E0EB0A00D07D90 /* PostFavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFavouriteViewController.swift; sourceTree = "<group>"; };
+		04DC9A9E25E10B7A00D07D90 /* Post.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Post.xcdatamodel; sourceTree = "<group>"; };
+		04DC9AA625E147C800D07D90 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		04DC9AAB25E1484C00D07D90 /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
+		04DC9AB525E159E200D07D90 /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
+		04DC9ABE25E15A9B00D07D90 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DC9AC525E15CB100D07D90 /* RxCocoa in Frameworks */,
+				04DC9AC325E15CB100D07D90 /* RxSwift in Frameworks */,
+				04DC9A9A25E100DE00D07D90 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +88,11 @@
 		04A7B32325DFEC5100502AC9 /* ScreenTest */ = {
 			isa = PBXGroup;
 			children = (
+				04DC9AA425E147AA00D07D90 /* Utilities */,
+				04DC9A9C25E10B6300D07D90 /* Resources */,
+				04A7B33925DFEC5E00502AC9 /* Model */,
+				04A7B33A25DFEC6700502AC9 /* View */,
+				04A7B33C25DFEC6E00502AC9 /* ViewModel */,
 				04A7B32425DFEC5100502AC9 /* AppDelegate.swift */,
 				04A7B32625DFEC5100502AC9 /* SceneDelegate.swift */,
 				04A7B32825DFEC5100502AC9 /* ViewController.swift */,
@@ -65,6 +102,94 @@
 				04A7B33225DFEC5600502AC9 /* Info.plist */,
 			);
 			path = ScreenTest;
+			sourceTree = "<group>";
+		};
+		04A7B33925DFEC5E00502AC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04A7B33D25DFECB200502AC9 /* LoginCredientials.swift */,
+				04DC9A8F25E0E7C600D07D90 /* PostFavourite.swift */,
+				04DC9ABE25E15A9B00D07D90 /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04A7B33A25DFEC6700502AC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04DC9A8825E0E60B00D07D90 /* TableViewCell */,
+				04A7B34125DFED0A00502AC9 /* LoginViewController.swift */,
+				04DC9A9525E0EB0A00D07D90 /* PostFavouriteViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04A7B33C25DFEC6E00502AC9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04A7B34425DFED4900502AC9 /* LoginViewModel */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04A7B34425DFED4900502AC9 /* LoginViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04A7B34525DFED5800502AC9 /* LoginViewModel.swift */,
+				04DC9A9225E0E7F400D07D90 /* PostFavouriteModel.swift */,
+			);
+			path = LoginViewModel;
+			sourceTree = "<group>";
+		};
+		04DC9A8825E0E60B00D07D90 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				04DC9A8925E0E62F00D07D90 /* PostTableViewCell.swift */,
+				04DC9A8A25E0E62F00D07D90 /* PostTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		04DC9A9C25E10B6300D07D90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04DC9A9D25E10B7A00D07D90 /* Post.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		04DC9AA425E147AA00D07D90 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				04DC9AB425E159CE00D07D90 /* Validations */,
+				04DC9AAA25E1483C00D07D90 /* Extensions */,
+				04DC9AA525E147B300D07D90 /* Persistence */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		04DC9AA525E147B300D07D90 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				04DC9AA625E147C800D07D90 /* CoreDataStorage.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		04DC9AAA25E1483C00D07D90 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04DC9AAB25E1484C00D07D90 /* CodingUserInfoKey.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04DC9AB425E159CE00D07D90 /* Validations */ = {
+			isa = PBXGroup;
+			children = (
+				04DC9AB525E159E200D07D90 /* ValidationViewModel.swift */,
+			);
+			path = Validations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +208,11 @@
 			dependencies = (
 			);
 			name = ScreenTest;
+			packageProductDependencies = (
+				04DC9A9925E100DE00D07D90 /* Alamofire */,
+				04DC9AC225E15CB100D07D90 /* RxSwift */,
+				04DC9AC425E15CB100D07D90 /* RxCocoa */,
+			);
 			productName = ScreenTest;
 			productReference = 04A7B32125DFEC5100502AC9 /* ScreenTest.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +240,10 @@
 				Base,
 			);
 			mainGroup = 04A7B31825DFEC5100502AC9;
+			packageReferences = (
+				04DC9A9825E100DE00D07D90 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				04DC9AC125E15CB100D07D90 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 04A7B32225DFEC5100502AC9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +261,7 @@
 				04A7B33125DFEC5600502AC9 /* LaunchScreen.storyboard in Resources */,
 				04A7B32E25DFEC5600502AC9 /* Assets.xcassets in Resources */,
 				04A7B32C25DFEC5100502AC9 /* Main.storyboard in Resources */,
+				04DC9A8C25E0E62F00D07D90 /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +272,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DC9AAC25E1484C00D07D90 /* CodingUserInfoKey.swift in Sources */,
+				04DC9AB625E159E200D07D90 /* ValidationViewModel.swift in Sources */,
+				04DC9A9625E0EB0A00D07D90 /* PostFavouriteViewController.swift in Sources */,
+				04DC9A8B25E0E62F00D07D90 /* PostTableViewCell.swift in Sources */,
+				04DC9AA725E147C800D07D90 /* CoreDataStorage.swift in Sources */,
+				04DC9A9025E0E7C600D07D90 /* PostFavourite.swift in Sources */,
+				04DC9ABF25E15A9B00D07D90 /* LoginModel.swift in Sources */,
 				04A7B32925DFEC5100502AC9 /* ViewController.swift in Sources */,
 				04A7B32525DFEC5100502AC9 /* AppDelegate.swift in Sources */,
+				04A7B34625DFED5800502AC9 /* LoginViewModel.swift in Sources */,
+				04DC9A9F25E10B7A00D07D90 /* Post.xcdatamodeld in Sources */,
+				04A7B33E25DFECB200502AC9 /* LoginCredientials.swift in Sources */,
+				04DC9A9325E0E7F400D07D90 /* PostFavouriteModel.swift in Sources */,
+				04A7B34225DFED0A00502AC9 /* LoginViewController.swift in Sources */,
 				04A7B32725DFEC5100502AC9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +488,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04DC9A9825E100DE00D07D90 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.1;
+			};
+		};
+		04DC9AC125E15CB100D07D90 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04DC9A9925E100DE00D07D90 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04DC9A9825E100DE00D07D90 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		04DC9AC225E15CB100D07D90 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04DC9AC125E15CB100D07D90 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		04DC9AC425E15CB100D07D90 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04DC9AC125E15CB100D07D90 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		04DC9A9D25E10B7A00D07D90 /* Post.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04DC9A9E25E10B7A00D07D90 /* Post.xcdatamodel */,
+			);
+			currentVersion = 04DC9A9E25E10B7A00D07D90 /* Post.xcdatamodel */;
+			path = Post.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 04A7B31925DFEC5100502AC9 /* Project object */;
 }
