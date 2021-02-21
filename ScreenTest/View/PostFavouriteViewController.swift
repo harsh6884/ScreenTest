@@ -22,7 +22,7 @@ class PostFavouriteViewController: UIViewController {
         
         viewModelPost.vc = self
         postTableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "postCell")
-        self.postTableView.estimatedRowHeight = 180
+        self.postTableView.estimatedRowHeight = 200
         self.postTableView.rowHeight = UITableView.automaticDimension
         viewModelPost.getAllPostaWithAlamofire()
         if let loadedCart = UserDefaults.standard.array(forKey: "Favourite") as? [[String: Any]] {
@@ -69,7 +69,7 @@ extension PostFavouriteViewController: UITableViewDataSource,UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = postTableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostTableViewCell
-        
+        cell?.selectionStyle = .none
         if selectedIndex == 0{
             cell?.modelUser = viewModelPost.arrPosts[indexPath.row]
         }else{
@@ -82,27 +82,29 @@ extension PostFavouriteViewController: UITableViewDataSource,UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let alert = UIAlertController(title: "Add to favourites", message: "Post mark as a favourite successfully", preferredStyle: .alert)
+        if selectedIndex == 0{
+            let alert = UIAlertController(title: "Post", message: "Do you want to add this post in favourites?? ", preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-            let selectedPost = self.viewModelPost.arrPosts[indexPath.row]
-            
-            var cart: [[String: Any]] = []
-            cart.append(["title": selectedPost.title ?? "", "body": selectedPost.body ?? ""])
-          //  cart.append(["title": selectedPost.title ?? "", "body": selectedPost.body ?? ""])
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                let selectedPost = self.viewModelPost.arrPosts[indexPath.row]
+                
+                var cart: [[String: Any]] = []
+                cart.append(["title": selectedPost.title ?? "", "body": selectedPost.body ?? ""])
+              //  cart.append(["title": selectedPost.title ?? "", "body": selectedPost.body ?? ""])
 
-            let defaults = UserDefaults.standard
-            defaults.setValue(cart, forKey: "Favourite")//Saved the Dictionary in user default
-        }))
-        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
-            print("Yay! You brought your towel!")
-        }))
-        self.present(alert, animated: true)
+                let defaults = UserDefaults.standard
+                defaults.setValue(cart, forKey: "Favourite")//Saved the Dictionary in user default
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
+                print("Yay! You brought your towel!")
+            }))
+            self.present(alert, animated: true)
+        }
+       
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        return 200
     }
     
 }

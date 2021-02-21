@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cHd-J0-bTd">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,7 +14,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cHd-J0-bTd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Co1-Ac-Rze">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -31,11 +31,11 @@
             <objects>
                 <viewController storyboardIdentifier="PostFavouriteViewController" id="YfE-kN-oZi" userLabel="PostFavouriteViewController" customClass="PostFavouriteViewController" customModule="ScreenTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Efg-fk-0q2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W7H-hc-jli">
-                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                                <rect key="frame" x="0.0" y="51" width="375" height="616"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="YfE-kN-oZi" id="KdP-0e-mpT"/>
@@ -43,7 +43,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="E3c-xE-c80">
-                                <rect key="frame" x="20" y="57" width="374" height="31"/>
+                                <rect key="frame" x="16" y="13" width="343" height="31"/>
                                 <segments>
                                     <segment title="Post"/>
                                     <segment title="Favourite"/>
@@ -81,11 +81,11 @@
             <objects>
                 <viewController title="Login" id="As6-XO-3vx" userLabel="LoginViewController" customClass="LoginViewController" customModule="ScreenTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rrc-Wg-QKH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ldt-LM-kcD">
-                                <rect key="frame" x="20" y="335" width="374" height="34"/>
+                                <rect key="frame" x="16" y="291" width="343" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
@@ -93,7 +93,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oyo-Bd-dpB">
-                                <rect key="frame" x="20" y="392" width="378" height="34"/>
+                                <rect key="frame" x="16" y="348" width="343" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
@@ -101,7 +101,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiE-DG-gGa">
-                                <rect key="frame" x="167" y="446" width="80" height="33"/>
+                                <rect key="frame" x="158.5" y="402" width="58" height="33"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
@@ -112,16 +112,14 @@
                         <viewLayoutGuide key="safeArea" id="hUI-He-bJc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Oyo-Bd-dpB" firstAttribute="leading" secondItem="hUI-He-bJc" secondAttribute="leading" constant="20" id="GPB-4H-KTI"/>
-                            <constraint firstItem="hUI-He-bJc" firstAttribute="trailing" secondItem="uiE-DG-gGa" secondAttribute="trailing" constant="167" id="HXl-6T-3n7"/>
+                            <constraint firstItem="uiE-DG-gGa" firstAttribute="top" secondItem="Oyo-Bd-dpB" secondAttribute="bottom" constant="20" id="Osc-cT-VfG"/>
                             <constraint firstItem="Ldt-LM-kcD" firstAttribute="top" secondItem="hUI-He-bJc" secondAttribute="top" constant="247" id="bo0-LE-kHJ"/>
+                            <constraint firstItem="uiE-DG-gGa" firstAttribute="centerX" secondItem="Rrc-Wg-QKH" secondAttribute="centerX" id="da0-yA-B18"/>
                             <constraint firstItem="hUI-He-bJc" firstAttribute="trailing" secondItem="Oyo-Bd-dpB" secondAttribute="trailing" constant="16" id="kCp-us-eBt"/>
-                            <constraint firstItem="uiE-DG-gGa" firstAttribute="leading" secondItem="hUI-He-bJc" secondAttribute="leading" constant="167" id="lqt-XS-Ndd"/>
                             <constraint firstItem="Ldt-LM-kcD" firstAttribute="leading" secondItem="Rrc-Wg-QKH" secondAttribute="leadingMargin" id="mKW-mB-koo"/>
                             <constraint firstItem="Oyo-Bd-dpB" firstAttribute="leading" secondItem="Ldt-LM-kcD" secondAttribute="leading" id="nCT-fH-fUg"/>
                             <constraint firstItem="Ldt-LM-kcD" firstAttribute="trailing" secondItem="Rrc-Wg-QKH" secondAttribute="trailingMargin" id="nPw-vg-NoY"/>
                             <constraint firstItem="Oyo-Bd-dpB" firstAttribute="top" secondItem="Ldt-LM-kcD" secondAttribute="bottom" constant="23" id="nbb-nO-EWB"/>
-                            <constraint firstItem="uiE-DG-gGa" firstAttribute="top" secondItem="Oyo-Bd-dpB" secondAttribute="bottom" constant="20" id="qdx-db-rUP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Screen 1" id="2Ed-xM-e9G"/>
@@ -133,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgB-M6-OEC" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="75"/>
+            <point key="canvasLocation" x="748" y="74.212893553223395"/>
         </scene>
     </scenes>
     <resources>

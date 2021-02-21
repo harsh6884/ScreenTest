@@ -12,107 +12,60 @@ import RxCocoa
 class LoginViewController: UIViewController {
 
     // MARK: - Stored Properties
-    var loginViewModel: LoginViewModel!
-    var emailIdViewModel = EmailIdViewModel()
-    var passwordViewModel = PasswordViewModel()
-   
+    var loginViewModel = LoginViewModel()
+    
     //MARK: - IBOutlets
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var btnSubmit: UIButton!
     
-    let viewModel = LoginViewModel()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        createViewModelBinding()
-        createCallbacks()
-       
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func createViewModelBinding(){
-        
-        self.btnSubmit.rx.tap.asObservable()
-            .filter({ (_) -> Bool in
-               
-                guard !(self.tfEmail.text ?? "").isEmpty else {
-                    self.showToast(message: "Please enter email id.", font:  .systemFont(ofSize: 12.0))
-                    self.tfEmail.becomeFirstResponder()
-                    return false
-                }
-                
-                self.tfEmail.rx.text.orEmpty
-                    .bind(to: self.emailIdViewModel.data)
-                    .disposed(by: self.disposeBag)
-                
-                self.tfPassword.rx.text.orEmpty
-                    .bind(to: self.passwordViewModel.data)
-                    .disposed(by: self.disposeBag)
+          tfEmail.becomeFirstResponder()
+        _ = tfEmail.rx.text.map { $0 ?? "" }.bind(to: loginViewModel.email)
+        _ = tfPassword.rx.text.map { $0 ?? "" }.bind(to: loginViewModel.password)
 
-                guard !(self.tfPassword.text ?? "").isEmpty else {
-                    NSLog("Please enter password")
-                    self.showToast(message: "Please enter password", font:  .systemFont(ofSize: 12.0))
-                    self.tfEmail.becomeFirstResponder()
-                    return false
-                }
-            
-                return true
+        _ = tfEmail.rx.text.orEmpty
+            .map { $0.isValidEmail }
+            .subscribe(onNext: { isValid in
+                self.showToast(message: "Email is \(isValid ? "" : "Not") Valid" , font:  .systemFont(ofSize: 12.0))
             })
-            .subscribe { _ in
-                // do something when all the fields are valid
-                if self.emailIdViewModel.validateCredentials() {
-                    self.showToast(message: "All fields are valid", font:  .systemFont(ofSize: 12.0))
-                    
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostFavouriteViewController") as! PostFavouriteViewController
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
-                else if self.passwordViewModel.validateCredentials(){
-                    self.showToast(message: "All fields are valid", font:  .systemFont(ofSize: 12.0))
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostFavouriteViewController") as! PostFavouriteViewController
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
-            }
-            .disposed(by: disposeBag)
-    }
     
-    func createCallbacks (){
+        _ = tfPassword.rx.text.orEmpty
+            .map { $0.isAlphabets }
+            .subscribe(onNext: { isValid in
+                self.showToast(message: "Password is \(isValid ? "" : "Not") Valid" , font:  .systemFont(ofSize: 12.0))
+            })
         
-        // success
-        viewModel.isSuccess.asObservable()
-            .bind{ value in
-                NSLog("Successfull")
-            }.disposed(by: disposeBag)
-        
-        // errors
-        viewModel.errorMsg.asObservable()
-            .bind { errorMessage in
-                // Show error
-                NSLog("Failure")
-
-            }.disposed(by: disposeBag)
-    
-        emailIdViewModel.errorValue.asObservable()
-            .bind { errorMesaage in
-                self.showToast(message: errorMesaage ?? "" , font:  .systemFont(ofSize: 12.0))
-            }.disposed(by: disposeBag)
-        passwordViewModel.errorValue.asObservable()
-            .bind { errorMesaage in
-                self.showToast(message: errorMesaage ?? "", font:  .systemFont(ofSize: 12.0))
-            }.disposed(by: disposeBag)
+        _ = loginViewModel.isValid.bind(to: btnSubmit.rx.isEnabled)
+        _ = loginViewModel.isValid.subscribe(onNext: { [unowned self] isValid in
+            self.btnSubmit.isEnabled = isValid ? true : false
+        })
+        .disposed(by: disposeBag)
     }
-    
-    
+   
     //MARK: - IBActions
     @IBAction func loginButtonPressed(_ sender: UIButton) {
        // self.performSegue(withIdentifier: "postSegue", sender: nil)
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostFavouriteViewController") as! PostFavouriteViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
+//MARK :- Extensions
+extension String {
+    var isValidEmail: Bool {
+        let emailRegex = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        return  predicate.evaluate(with: self)
+    }
+    
+    var isAlphabets: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z]", options: .regularExpression) == nil
     }
     
 }
@@ -131,7 +84,7 @@ extension LoginViewController {
         toastLabel.layer.cornerRadius = 10;
         toastLabel.clipsToBounds  =  true
         self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 8.0, delay: 0.1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
             toastLabel.alpha = 0.0
         }, completion: {(isCompleted) in
             toastLabel.removeFromSuperview()
